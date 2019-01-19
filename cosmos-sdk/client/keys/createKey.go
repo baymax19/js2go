@@ -8,10 +8,6 @@ import (
 )
 
 const (
-	// used for deriving seed from mnemonic
-	defaultBIP39Passphrase = ""
-
-	// bits of entropy to draw when creating a mnemonic
 	defaultEntropySize = 256
 )
 

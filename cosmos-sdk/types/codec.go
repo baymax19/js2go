@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/baymax19/js2go/cosmos-sdk/codec"
+	"github.com/baymax19/js2go/codec"
 )
 
 func RegisterCodec(cdc *codec.Codec) {

@@ -2,7 +2,6 @@ package bank
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/baymax19/js2go/cosmos-sdk/types"
 )
 
@@ -18,7 +17,6 @@ func NewMsgSend(in []Input, out []Output) MsgSend {
 }
 
 func CreateMsg(from, to types.AccAddress, coins types.Coins) types.Msg {
-	fmt.Println(from, to)
 	input := NewInput(from, coins)
 	output := NewOutput(to, coins)
 	msg := NewMsgSend([]Input{input}, []Output{output})

@@ -1,12 +1,15 @@
 package cli
 
 import (
+	"encoding/base64"
 	"github.com/baymax19/js2go/cosmos-sdk/types"
+	"github.com/baymax19/js2go/cosmos-sdk/x/auth"
+	"github.com/baymax19/js2go/cosmos-sdk/x/auth/client/txbuilder"
 	"github.com/baymax19/js2go/cosmos-sdk/x/bank"
-	"github.com/gopherjs/gopherjs/js"
+	jscodec "github.com/baymax19/js2go/types"
 )
 
-func SendCoins(from, to, amount, seed string) *js.Object {
+func SendCoins(from, to, amount, seed string) string {
 
 	fromAddr, err := types.AccAddressFromBech32(from)
 	if err != nil {
@@ -24,5 +27,13 @@ func SendCoins(from, to, amount, seed string) *js.Object {
 	}
 
 	msg := bank.CreateMsg(fromAddr, toAddr, coins)
-	return &js.Object{}
+	baseReq := txbuilder.NewBaseReq(2, 6, 200000, "sentinel-vpn", "", "0STAKE").WithTxEncoder(auth.DefaultTxEncoder(jscodec.Cdc))
+
+	txBytes, err := baseReq.BuildAndSign(seed, []types.Msg{msg})
+	if err != nil {
+		panic(err)
+	}
+
+	data := base64.StdEncoding.EncodeToString(txBytes)
+	return data
 }

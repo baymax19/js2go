@@ -95,27 +95,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:4a0c6bb4805508a6287675fac876be2ac1182539ca8a32468d8128882e9d5009"
-  name = "github.com/golang/snappy"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "2e65f85255dbc3072edf28d6b5b8efc472979f5a"
-
-[[projects]]
-  branch = "master"
   digest = "1:f14d1b50e0075fb00177f12a96dd7addf93d1e2883c25befd17285b779549795"
   name = "github.com/gopherjs/gopherjs"
   packages = ["js"]
   pruneopts = "UT"
   revision = "d547d1d9531ed93dbdebcbff7f83e7c876a1e0ee"
-
-[[projects]]
-  branch = "master"
-  digest = "1:39b27d1381a30421f9813967a5866fba35dc1d4df43a6eefe3b7a5444cb07214"
-  name = "github.com/jmhodges/levigo"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "c42d9e0ca023e2198120196f842701bb4c55d7b9"
 
 [[projects]]
   branch = "master"
@@ -134,27 +118,6 @@
   version = "v0.8.0"
 
 [[projects]]
-  branch = "master"
-  digest = "1:685fdfea42d825ebd39ee0994354b46c374cf2c2b2d97a41a8dee1807c6a9b62"
-  name = "github.com/syndtr/goleveldb"
-  packages = [
-    "leveldb",
-    "leveldb/cache",
-    "leveldb/comparer",
-    "leveldb/errors",
-    "leveldb/filter",
-    "leveldb/iterator",
-    "leveldb/journal",
-    "leveldb/memdb",
-    "leveldb/opt",
-    "leveldb/storage",
-    "leveldb/table",
-    "leveldb/util",
-  ]
-  pruneopts = "UT"
-  revision = "b001fa50d6b27f3f0bb175a87d0cb55426d0a0ae"
-
-[[projects]]
   digest = "1:605b6546f3f43745695298ec2d342d3e952b6d91cdf9f349bea9315f677d759f"
   name = "github.com/tendermint/btcd"
   packages = ["btcec"]
@@ -170,7 +133,7 @@
   version = "v0.14.1"
 
 [[projects]]
-  digest = "1:91fe57a469f73e04e558c1652c01b7d5ce6934df2e367186ce81365c6055d02b"
+  digest = "1:fabd0ce7b61e2cf4c95d6ba2c08ab46c4cb1b8a7d1d4af56b8d95f4523161f33"
   name = "github.com/tendermint/tendermint"
   packages = [
     "crypto",
@@ -183,7 +146,6 @@
     "crypto/tmhash",
     "crypto/xsalsa20symmetric",
     "libs/common",
-    "libs/db",
     "libs/log",
   ]
   pruneopts = "UT"
@@ -237,11 +199,11 @@
     "github.com/cosmos/cosmos-sdk/crypto/keys/mintkey",
     "github.com/cosmos/go-bip39",
     "github.com/gopherjs/gopherjs/js",
+    "github.com/pkg/errors",
     "github.com/tendermint/go-amino",
     "github.com/tendermint/tendermint/crypto",
     "github.com/tendermint/tendermint/crypto/encoding/amino",
     "github.com/tendermint/tendermint/crypto/secp256k1",
-    "github.com/tendermint/tendermint/libs/db",
     "github.com/tendermint/tmlibs/bech32",
   ]
   solver-name = "gps-cdcl"

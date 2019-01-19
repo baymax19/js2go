@@ -7,14 +7,8 @@ import (
 	"github.com/cosmos/go-bip39"
 	tmcrypto "github.com/tendermint/tendermint/crypto"
 	"github.com/tendermint/tendermint/crypto/secp256k1"
-	dbm "github.com/tendermint/tendermint/libs/db"
-
 	"strings"
 )
-
-type dbKeybase struct {
-	db dbm.DB
-}
 
 func CreateKey(name, password, mnemonic string) (info Info, err error) {
 
@@ -37,7 +31,8 @@ func CreateKey(name, password, mnemonic string) (info Info, err error) {
 func persistDerivedKey(seed []byte, password, name, path string) (info Info, err error) {
 
 	masterPriv, ch := hd.ComputeMastersFromSeed(seed)
-	derivedPriv, err := hd.DerivePrivateKeyForPath(masterPriv, ch, hd.FullFundraiserPath)
+
+	derivedPriv, err := hd.DerivePrivateKeyForPath(masterPriv, ch, path)
 	if err != nil {
 		panic(err)
 	}

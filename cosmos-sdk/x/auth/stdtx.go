@@ -2,7 +2,7 @@ package auth
 
 import (
 	"encoding/json"
-	"github.com/baymax19/js2go/cosmos-sdk/codec"
+	"github.com/baymax19/js2go/codec"
 	sdk "github.com/baymax19/js2go/cosmos-sdk/types"
 	"github.com/tendermint/tendermint/crypto"
 )
