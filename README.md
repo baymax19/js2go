@@ -96,3 +96,4 @@ before post txbytes using axios, start the gaiad using
 ``` gaiad start```  
 this project totally based on the reference of [cosmos-sdk](github.com/cosmos/cosmos-sdk) and [tendermint](github.com/tendermint),  
 it will be  useful to run the golang code in webbrowser using js
+I have taken **AccountNumber,Sequence,ChainID** are static so please make note of this
