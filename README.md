@@ -90,8 +90,9 @@ generated txbytes are send throw axios post method in [tendermint_rpc](https://g
 ```
 
 #Note
-for these I am used cosmos-sdk v0.29.1  
+
+for this project I am used cosmos-sdk v0.29.1  
 before post txbytes using axios, start the gaiad using 
 ``` gaiad start```  
 this project totally based on the reference of [cosmos-sdk](github.com/cosmos/cosmos-sdk) and [tendermint](github.com/tendermint),  
-it will useful to run the golang code in webbrowser using js
+it will be  useful to run the golang code in webbrowser using js
