@@ -27,7 +27,7 @@ func SendCoins(from, to, amount, seed string) string {
 	}
 
 	msg := bank.CreateMsg(fromAddr, toAddr, coins)
-	baseReq := txbuilder.NewBaseReq(2, 6, 200000, "sentinel-vpn", "", "0STAKE").WithTxEncoder(auth.DefaultTxEncoder(jscodec.Cdc))
+	baseReq := txbuilder.NewBaseReq(2, 6, 200000, "chain-id", "", "0STAKE").WithTxEncoder(auth.DefaultTxEncoder(jscodec.Cdc))
 
 	txBytes, err := baseReq.BuildAndSign(seed, []types.Msg{msg})
 	if err != nil {
