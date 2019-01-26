@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/baymax19/js2go/cosmos-sdk/client/keys"
+	"github.com/baymax19/js2go/cosmos-sdk/client/tx"
 	"github.com/baymax19/js2go/cosmos-sdk/types"
 	"github.com/baymax19/js2go/cosmos-sdk/x/auth"
 	"github.com/baymax19/js2go/cosmos-sdk/x/bank"
@@ -17,7 +18,8 @@ func main() {
 	bank.RegisterCodec(cdc)
 	types.RegisterCodec(cdc)
 
-
 	js.Module.Get("exports").Set("createKey", keys.CreateKey)
 	js.Module.Get("exports").Set("sendCoins", cli.SendCoins)
+	js.Module.Get("exports").Set("txQuery", tx.TxQuery)
+	
 }
